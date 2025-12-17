@@ -4,15 +4,15 @@
 #include <stdio.h>
 
 typedef struct s_rect {
-  unsigned int x;
-  unsigned int y;
-  unsigned int w;
-  unsigned int h;
+  int x;
+  int y;
+  int w;
+  int h;
 } t_rect;
 
 typedef struct s_point {
-  unsigned int x;
-  unsigned int y;
+  int x;
+  int y;
 } t_point;
 
 typedef struct s_color {
@@ -23,15 +23,16 @@ typedef struct s_color {
 
 typedef struct s_canvas {
   unsigned int* pixels;
-  unsigned int  width;
-  unsigned int  height;
+  int  width;
+  int  height;
 } t_canvas;
 
 #define RGB(r, g, b) ((unsigned int)((r << 16) | (g << 8) | (b << 0)))
 
 void fill_canvas(t_canvas* canvas, t_color color);
 void fill_rect(t_canvas* canvas, t_rect* rect, t_color color);
-void fill_arc(t_canvas* canvas, t_rect* rect, t_color color, unsigned int radius);
+void fill_arc(t_canvas* canvas, t_rect* rect, t_color color, int radius);
 void fill_point(t_canvas* canvas, t_point* point, t_color color);
+void fill_line(t_canvas* canvas, t_point* start, t_point* end, t_color color, int thicness);
 
 #endif // H_CCANVAS
