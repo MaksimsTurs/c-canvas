@@ -1,6 +1,6 @@
 #include "./include/ccanvas.h"
 
-// clang -Wall -Wextra -O2 main.c ccanvas.c -o main
+// clang -Wall -Wextra -O2 main.c ./src/ccanvas.c -o main
 
 #define CANVAS_WIDTH  900
 #define CANVAS_HEIGHT 900
